@@ -1,8 +1,6 @@
 % The code here should generate and save the portion of figure 1 panel F
-% summarizing PN target identity. It requires tracing data files located in
-% the home directory in a folder called "tracing". This data can be
-% downloaded at: 
-% it also relies on the
+% summarizing PN target identity.
+% relies on the
 % package JSONLab: https://www.mathworks.com/matlabcentral/fileexchange/33381-jsonlab--a-toolbox-to-encode-decode-json-files
 
 %% Load annotations and connectors
@@ -20,17 +18,6 @@ ORNs=[ORNs_Left, ORNs_Right];
 
 %return all skeleton IDs of DM6 PNs
 PNs=sort(annotations.DM6_0x20_PN);
-
-% return all skel IDs with *LN* in fieldname
-Fn = fieldnames(annotations);
-selFn = Fn(~cellfun(@isempty,regexp(Fn,'LN')));
-
-LNs=[];
-for i = 1:numel(selFn)
-    LNs=[LNs, annotations.(selFn{i})];
-end
-
-LNs = unique(LNs);
 
 %Load the connector structure
 load('~/tracing/conns.mat')
@@ -114,13 +101,7 @@ for p=1:length(PNs)
         elseif ismember(postSkel{p}(s), PNs) == 1
             
             postSynID{p}(s)=2;
-            
-            
-        elseif ismember(postSkel{p}(s), LNs) == 1
-            
-            postSynID{p}(s)=3;
-            
-            
+       
         else
             postSynID{p}(s)=3;%4;
             
