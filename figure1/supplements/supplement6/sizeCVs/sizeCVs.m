@@ -3,11 +3,11 @@
 
 
 % Load the cell array contianing the tracer averaged, bias corrected tbar vol and pn area measurments
-load ../../synapseElementSizeScripts/averaging/aveSizesBC.mat
+load ../synapseElementSizeScripts/averaging/aveSizesBC.mat
 
 %Load a cell array containing connector IDs for all connectors represented
 %in aveSizesBC.mat
-load ../../synapseElementSizeScripts/segIDs.mat
+load ../synapseElementSizeScripts/segIDs.mat
 
 %sort measurments ipsi/contra syns
 tbarVols=[];

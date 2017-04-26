@@ -8,7 +8,6 @@ load ../../synapseElementSizeScripts/averaging/aveSizesBC.mat
 %sort measurments ipsi/contra syns
 ipsiSyns=[];
 contraSyns=[];
-
 connsIncluded={};
 
 

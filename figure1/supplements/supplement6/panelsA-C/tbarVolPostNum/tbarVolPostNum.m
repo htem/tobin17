@@ -1,4 +1,4 @@
-% The code here should generate and save figure 1 supplement 6 panel C
+% The code here should generate and save figure 1 supplement 6 panel A
 
 %%
 
@@ -7,14 +7,11 @@ load ../../synapseElementSizeScripts/averaging/aveSizesBC.mat
 
 %Load a cell array containing connector IDs for all connectors represented
 %in aveSizesBC.mat
-
 load ../../synapseElementSizeScripts/segIDs.mat
-
 
 %sort measurments ipsi/contra syns
 ipsiSyns=[];
 contraSyns=[];
-
 connsIncluded={};
 
 
