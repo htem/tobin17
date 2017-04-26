@@ -1,6 +1,4 @@
 % The code here should generate and save figure 2 panel D
-% It requires tracing data files located in
-% a folder called "tracing". 
 
 % it also relies on the
 % package JSONLab: https://www.mathworks.com/matlabcentral/fileexchange/33381-jsonlab--a-toolbox-to-encode-decode-json-files
@@ -75,9 +73,6 @@ end
 
 
 %% Categorize presynaptic profiles
-
-% Question, how many profiles can be accounted for as ORNs, PNs and LNs?
-
 
 % Loop over each PN
 for p=1:length(PNs)
