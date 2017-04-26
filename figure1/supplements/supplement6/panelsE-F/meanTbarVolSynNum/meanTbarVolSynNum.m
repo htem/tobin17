@@ -1,14 +1,14 @@
 % The code here should generate and save figure 1 supplement 6 panel F
 
+%%
+
 % Load the cell array contianing the tracer averaged, bias corrected tbar vol and pn area measurments
 load ../../synapseElementSizeScripts/averaging/aveSizesBC.mat
 
 %Pull mean tbar vol and synapse number for each ipsilateral unitary connection
 %segmented
-
 ipsiTbarMeans=[];
 synsPerConn=[];
-
 
 
 for o=1:10
