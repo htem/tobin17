@@ -14,7 +14,7 @@ print ""
 print "*****************************************************"
 print ""
 print "    neuroConstruct generated NEURON simulation "
-print "    for project: /home/simulation/nC_projects/PN1LS_allORNs/PN1LS_allORNs.ncx "
+print "    for project: /home/simulation/nC_projects_lite/PN1LS_allORNs/PN1LS_allORNs.ncx "
 print ""
 print "    Description: neuroConstruct project generated from contents of file: /home/simulation/allORNsToPNsFinal/PN1LS_allORNs.neuroml"
 print "    "
@@ -10785,7 +10785,7 @@ simReference = "unitaries"
 
 
 strdef simsDir
-simsDir = "/home/simulation/nC_projects/PN1LS_allORNs/simulations/"
+simsDir = "/home/simulation/nC_projects_lite/PN1LS_allORNs/simulations/"
 
 
 //  Note: to change location of the generated simulation files, just change value of targetDir
