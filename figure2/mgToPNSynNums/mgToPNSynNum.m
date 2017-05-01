@@ -1,7 +1,6 @@
 % The code here should generate and save figure 2 panel D
-
-% it also relies on the
-% package JSONLab: https://www.mathworks.com/matlabcentral/fileexchange/33381-jsonlab--a-toolbox-to-encode-decode-json-files
+% it relies on the package: 
+% JSONLab: https://www.mathworks.com/matlabcentral/fileexchange/33381-jsonlab--a-toolbox-to-encode-decode-json-files
 
 %% Load annotations and connectors
  clear
@@ -10,10 +9,8 @@
 annotations=loadjson('../../tracing/sid_by_annotation.json');
 
 % Return all skeleton IDs for R and L ORNs
-
 ORNs_Left=annotations.Left_0x20_ORN;
 ORNs_Right=annotations.Right_0x20_ORN;
-
 ORNs=[ORNs_Left, ORNs_Right];
 
 %return all skeleton IDs of DM6 PNs
