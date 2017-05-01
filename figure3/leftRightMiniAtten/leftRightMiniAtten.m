@@ -1,4 +1,5 @@
-% This script should generate figure 3 panel F boxplots
+% This script should generate figure 3 panel G boxplots, relies on the
+% products of pullmEPSP.m
 
 
 %% Load annotations and connectors
@@ -16,17 +17,6 @@ ORNs=[ORNs_Left, ORNs_Right];
 %return all skeleton IDs of DM6 PNs
 PNs=sort(annotations.DM6_0x20_PN);
 
-% return all skel IDs with *LN* in fieldname
-Fn = fieldnames(annotations);
-selFn = Fn(~cellfun(@isempty,regexp(Fn,'LN')));
-
-LNs=[];
-for i = 1:numel(selFn)
-    LNs=[LNs, annotations.(selFn{i})];
-end
-
-LNs = unique(LNs);
-
 %Load the connector structure
 load('~/tracing/conns.mat')
 
@@ -36,7 +26,11 @@ connFields=fieldnames(conns);
 %% For this code to run you must first run pullmEPSPs
 
 %load the local mini matrix
-load('~/nC_projects/localMinis.mat')
+
+% localMinis.mat is produced by running the script
+% nC_projects/localMinis.mat
+
+load('~/nC_projects_lite/localMinis.mat')
 
 PN_Names={'PN1LS','PN2LS', 'PN3LS', 'PN1RS', 'PN2RS'};
 
@@ -45,7 +39,7 @@ for p=1:5
     PN=PN_Names{p};
     
     %move to the PNs mini result directory
-    cd(['~/nC_projects/',PN,'_allORNs/simulations/minis'])
+    cd(['~/nC_projects_lite/',PN,'_allORNs/simulations/minis'])
     
     %Import the list of ORN skel IDs corresponding to each synapse, this
     %was generated during mEPSP_AmpWorking_wcl.m
@@ -90,19 +84,13 @@ valsU = [lDecay,rDecay];
 
 
 %% Simple bar plot Left-Right PN mEPSP decay
-%Ipsi and contra broken out
-
-%move to the figure directory to save the plot
-cd('~/Documents/MATLAB/tracingCode2/currentWfly1ManuscriptFigures/leftRightMinisAndUnitaries/leftRightMiniAtten/')
 
 figure
 set(gcf,'Color', 'w')
-bar(YUmean,.4,'FaceColor','k','LineWidth',2)
+boxplot(valsU,gpsU, 'notch', 'on', 'Color', 'k')
 hold on
-he = errorbar(YUmean,YUsem,'k','LineStyle','none'); % error bars are std
-he.LineWidth=1;
 xlim([0.5 2.5])
- ylim([0 .18])
+ ylim([0 .4])
 ax = gca;
 ax.XTick = [1 2];
 ax.XTickLabel = {'Left PNs';'Right PNs'};

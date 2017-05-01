@@ -24,6 +24,10 @@ connFields=fieldnames(conns);
 %% For this code to run you must first run pullmEPSPs
 
 %load the local mini matrix
+
+% localMinis.mat is produced by running the script
+% nC_projects/localMinis.mat
+
 load('../../nC_projects/localMinis.mat')
 
 PN_Names={'PN1LS','PN2LS', 'PN3LS', 'PN1RS', 'PN2RS'};
