@@ -7,7 +7,8 @@ See the included LICENSE file for information on use, copy, modification, and/or
 Attribute with the above citation when using data or software included in this repository in publication.
 
 Many scripts have external dependencies including:
-JSONLab available at: https://www.mathworks.com/matlabcentral/fileexchange/33381-jsonlab--a-toolbox-to-encode-decode-json-files
+JSONLab: https://www.mathworks.com/matlabcentral/fileexchange/33381-jsonlab--a-toolbox-to-encode-decode-json-files
+
 Additional information should be listed in file headers.
 
 Modeling and simulation files (./nC_projects_lite/) available at https://neurodata.io/data/tobin17 download and uncompress into the this repo’s root directory.
