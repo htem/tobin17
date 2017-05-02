@@ -89,8 +89,8 @@ baseDir='../../nC_projects_lite/';
         miniMeans(p,1)=mean(indAmpsI{p});
         miniMeans(p,2)=mean(indAmpsC{p});
         
-        sem(p,1)=std(indAmpsI{p})/sqrt(length(indAmpsI{p}))
-        sem(p,2)=std(indAmpsC{p})/sqrt(length(indAmpsC{p}))
+        sem(p,1)=std(indAmpsI{p})/sqrt(length(indAmpsI{p}));
+        sem(p,2)=std(indAmpsC{p})/sqrt(length(indAmpsC{p}));
     end
   
 
