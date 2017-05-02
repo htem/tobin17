@@ -6,16 +6,20 @@ See the included LICENSE file for information on use, copy, modification, and/or
 
 Attribute with the above citation when using data or software included in this repository in publication.
 
-Many scripts have external dependencies including:
-JSONLab: https://www.mathworks.com/matlabcentral/fileexchange/33381-jsonlab--a-toolbox-to-encode-decode-json-files
-
-Additional information should be listed in file headers.
 
 Modeling and simulation files (./nC_projects_lite/) available at https://neurodata.io/data/tobin17 download and uncompress into the this repo’s root directory.
 
 Skeleton tracing files (./tracing/skeletons/) available at https://neurodata.io/data/tobin17 download and uncompress into the the ./tracing/ directory
  
 Tools to interact with catmaid are available here: https://github.com/htem/catmaid_tools.
+
+
+Many scripts have external dependencies including:
+
+JSONLab: https://www.mathworks.com/matlabcentral/fileexchange/33381-jsonlab--a-toolbox-to-encode-decode-json-files
+
+Additional information should be listed in file headers.
+
 
 Scripts working on a Intel(R) Xeon(R) CPU E5520 workstation with 16 cores and 72 GB RAM, running Ubuntu 12.04 x64 and MATLAB (R) R2015a (8.5.0.197613) 64-bit (glnxa64).
 
