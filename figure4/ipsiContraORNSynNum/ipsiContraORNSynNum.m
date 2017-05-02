@@ -4,7 +4,7 @@
 % This code should generate figure 4 panel C
 
 %% Load the ornToPN connection matrix
-load('../../figure1/unitaryConNums/ornToPn.mat');
+load('../../data/ornToPn.mat');
 
 %Record the total number of input synapses from ipsi and
 %contra ORNs for all PNs

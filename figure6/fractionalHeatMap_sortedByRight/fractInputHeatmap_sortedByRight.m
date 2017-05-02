@@ -42,7 +42,7 @@ connFields=fieldnames(conns);
 
 
 %Load ornToPn contact Num matrix
-load('../../figure1/unitaryConNums/ornToPn.mat');
+load('../../data/ornToPn.mat');
     
 
 % Now divide each element by the sum of the column it is in

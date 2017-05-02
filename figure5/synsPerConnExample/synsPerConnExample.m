@@ -1,7 +1,7 @@
 % This script should generate figure 5 panel B histogram
 
 %load orn to PN connectivity matrix
-load('../../figure1/unitaryConNums/ornToPn.mat')
+load('../../data/ornToPn.mat')
 
 ipsiConsL(1:27,1:3)=ornToPn(1:27,[1,2,5]);
 ipsiConsR(1:26,1:2)=ornToPn(28:end,[3,4]);

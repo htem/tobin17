@@ -1,6 +1,6 @@
 % The code here should generate and save figure 2 panel B
 
-load('../../figure1/unitaryConNums/ornToPn.mat')
+load('../../data/ornToPn.mat')
 
 % order leftPNs1-3: 1,2,5 and right PNs1-2: 4,3  % 151230 WCL corresponded to catmaid2
 ornToRPN(1)=sum(ornToPn(:,4));
