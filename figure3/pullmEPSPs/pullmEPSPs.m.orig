@@ -1,4 +1,4 @@
-
+<<<<<<< HEAD
 %% Note: This code requires GNU Grep to run without modification
 
 %% This script pulls simulated mEPSPs for all ORN-> PN connections
@@ -6,7 +6,7 @@
 %~/nC_projects/'hocEdminis2.py to modify default .hoc files produced by neuroConstruct
 %based on our PN dendrite w/ ORN input neuroML files
 %(~/nC_projects/pnDendritesWithORNInputsNeuroML)
-
+=======
 %% This script pulls simulated mEPSPs for all ORN-> PN connections
 % These simulations are produced by using the script
 % ../../nC_projects_lite/hocEd3.py to modify default .hoc files produced by neuroConstruct
@@ -17,6 +17,7 @@
 % download into the this repos root directory
 %
 % Note: This code requires GNU Grep to run without modification
+>>>>>>> 7ae7c31bc01052b2a2beca95334a739fb762de71
 
 %% Load annotations and connectors
 
