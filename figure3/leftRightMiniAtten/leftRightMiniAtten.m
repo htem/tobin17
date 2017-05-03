@@ -38,9 +38,6 @@ PN_Names={'PN1LS','PN2LS', 'PN3LS', 'PN1RS', 'PN2RS'};
 for p=1:5
     PN=PN_Names{p};
     
-    %move to the PNs mini result directory
-    %cd(['../../nC_projects_lite/',PN,'_allORNs/simulations/minis'])
-    
     %Import the list of ORN skel IDs corresponding to each synapse, this
     %was generated during mEPSP_AmpWorking_wcl.m
     
