@@ -1,10 +1,8 @@
-# tobin17
-
-Data, analysis, and figure scripts from: Wiring variations that enable and constrain neural computation in a sensory microcircuit. Tobin WF, Wilson RI, Lee WC. eLife. 2017.
+# Data, analysis, and figure scripts from: Wiring variations that enable and constrain neural computation in a sensory microcircuit. Tobin WF, Wilson RI, Lee WC. eLife. 2017.
 
 See the included LICENSE file for information on use, copy, modification, and/or distribution of this software and data. 
 
-Attribute with the above citation when using data or software included in this repository in publication.
+Attribute with the above citation when using this data or software in publication.
 
 
 Modeling and simulation files (./nC_projects_lite/) available at https://neurodata.io/data/tobin17 download and uncompress into the this repo’s root directory.
@@ -19,6 +17,8 @@ Many scripts have external dependencies including:
 JSONLab: https://www.mathworks.com/matlabcentral/fileexchange/33381-jsonlab--a-toolbox-to-encode-decode-json-files
 
 Additional information should be listed in file headers.
+
+Be sure to add ./functions/ directory to your MATLAB path.
 
 
 Scripts working on a Intel(R) Xeon(R) CPU E5520 workstation with 16 cores and 72 GB RAM, running Ubuntu 12.04 x64 and MATLAB (R) R2015a (8.5.0.197613) 64-bit (glnxa64).
