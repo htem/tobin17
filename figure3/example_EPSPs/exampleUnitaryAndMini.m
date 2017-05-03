@@ -1,8 +1,8 @@
-% code to plot an example unitary and miniEPSP, figure 3 panel B
-
-%for this code to run you first need to load L PN1s simulated mini and
-%unitary synaptic potentials. To do this run at least the LPN1 portions of
-%../pullmEPSPs/pullmEPSPs.m and ../pulluEPSPs/pulluEPSPs.m
+%% code to plot an example unitary and miniEPSP, figure 3 panel B
+%
+% for this code to run you first need to load L PN1s simulated mini and
+% unitary synaptic potentials. To do this run at least the LPN1 portions of
+% ../pullmEPSPs/pullmEPSPs.m and ../pulluEPSPs/pulluEPSPs.m
 
 % FInd the largest and smallest uEPSP and mEPSP for L PN1
     

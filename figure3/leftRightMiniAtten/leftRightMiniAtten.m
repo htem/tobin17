@@ -1,6 +1,6 @@
-% This script should generate figure 3 panel G boxplots, relies on the
-% products of pullmEPSP.m
-
+%% This script should generate figure 3 panel G boxplots 
+%
+% relies on theproducts of pullmEPSP.m
 
 %% Load annotations and connectors
 
@@ -22,22 +22,15 @@ load('../../tracing/conns.mat')
 connFields=fieldnames(conns);
 
 %% For this code to run you must first run pullmEPSPs
-<<<<<<< HEAD
-
-%load the local mini matrix
 
 % localMinis.mat is produced by running the script
-% nC_projects/localMinis.mat
-
-load('~/nC_projects_lite/localMinis.mat')
-=======
+% nC_projects/localMinis.m
 %
 % nC_projects_lite/ available at https://neurodata.io/data/tobin17
 % download into the this repos root directory
-%
+
 % load the local mini matrix
 load('../../nC_projects_lite/localMinis.mat')
->>>>>>> 7ae7c31bc01052b2a2beca95334a739fb762de71
 
 PN_Names={'PN1LS','PN2LS', 'PN3LS', 'PN1RS', 'PN2RS'};
 
@@ -46,12 +39,12 @@ for p=1:5
     PN=PN_Names{p};
     
     %move to the PNs mini result directory
-    cd(['~/nC_projects_lite/',PN,'_allORNs/simulations/minis'])
+    %cd(['../../nC_projects_lite/',PN,'_allORNs/simulations/minis'])
     
     %Import the list of ORN skel IDs corresponding to each synapse, this
     %was generated during mEPSP_AmpWorking_wcl.m
     
-    synIDs=importdata('ornIDs.txt');
+    synIDs=importdata(['../../nC_projects_lite/',PN,'_allORNs/simulations/minis/ornIDs.txt']);
     
     localCounter=1;
     leftCounter=1;
@@ -97,7 +90,7 @@ set(gcf,'Color', 'w')
 boxplot(valsU,gpsU, 'notch', 'on', 'Color', 'k')
 hold on
 xlim([0.5 2.5])
- ylim([0 .4])
+ylim([0 .4])
 ax = gca;
 ax.XTick = [1 2];
 ax.XTickLabel = {'Left PNs';'Right PNs'};

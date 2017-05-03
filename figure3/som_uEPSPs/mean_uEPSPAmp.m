@@ -1,9 +1,8 @@
-%This script should generate figure3 panel C
-
-%for this code to run you first need to load simulated
-%unitary synaptic potentials for all PNs. To do this, run
+%% This script should generate figure3 panel C
+%
+% for this code to run you first need to load simulated
+% unitary synaptic potentials for all PNs. To do this, run
 %  ../pulluEPSPs/pulluEPSPs.m
-
 
 % Collect the amplitude of ipsilateral and contralateral uEPSPs for R and L PNs
 

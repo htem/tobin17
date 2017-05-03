@@ -1,5 +1,4 @@
-% This script should generate figure 3 panel E boxplots
-
+%% This script should generate figure 3 panel E boxplots
 
 %% Load annotations and connectors
 
@@ -69,6 +68,7 @@ ax = gca;
 ax.XTick = [1 2];
 ax.XTickLabel = {'Left PNs';'RightPNs'};
 ax.FontSize=16;
+ylim([0 7])
 ylabel('Local mEPSP Amp (mV)')
 axis square
 

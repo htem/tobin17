@@ -1,6 +1,6 @@
-%This script should generate figure3 panel D
-
-%for this code to run you first need to load simulated mini 
+%% This script should generate figure3 panel D
+%
+% for this code to run you first need to load simulated mini 
 % synaptic potentials for all PNs. To do this, run
 % ../pullmEPSPs/pullmEPSPs.m 
 
@@ -72,7 +72,7 @@ axis square
 saveas(gcf,'leftRightMiniAmpBoxplots','epsc')
 saveas(gcf,'leftRightMiniAmpBoxplots')
 
-%% Permutation test (p~ 0.57)
+%% Permutation test (p ~ 0)
 nPerm = 10000;
 
 sa = [ilmAmps';clmAmps'];
