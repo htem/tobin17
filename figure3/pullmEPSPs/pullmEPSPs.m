@@ -35,11 +35,11 @@ pn1LS_Vm=importdata('../../nC_projects_lite/PN1LS_allORNs/simulations/minis/neur
 pn1LS_simTime=importdata('../../nC_projects_lite/PN1LS_allORNs/simulations/minis/time.dat');
 
 %collect ORN skel IDs from PN1LS hoc file, one for every synapse,  and save them in a txt file
-idCommand='/usr/local/bin/grep -Po ''(?<=^synapse_)\d*'' ../../nC_projects_lite/PN1LS_allORNs/simulations/minis/PN1LS_allORNs.hoc > ../../nC_projects_lite/PN1LS_allORNs/simulations/minis/ornIDs.txt ';
+idCommand='grep -Po ''(?<=^synapse_)\d*'' ../../nC_projects_lite/PN1LS_allORNs/simulations/minis/PN1LS_allORNs.hoc > ../../nC_projects_lite/PN1LS_allORNs/simulations/minis/ornIDs.txt ';
 system(idCommand);
 synIDs=importdata('../../nC_projects_lite/PN1LS_allORNs/simulations/minis/ornIDs.txt');
 
-fireTimeCmd='/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ../../nC_projects_lite/PN1LS_allORNs/simulations/minis/PN1LS_allORNs.hoc > ../../nC_projects_lite/PN1LS_allORNs/simulations/minis/ornSpikeTimes.txt';
+fireTimeCmd='grep -Po ''((?<=.start = )\d*)'' ../../nC_projects_lite/PN1LS_allORNs/simulations/minis/PN1LS_allORNs.hoc > ../../nC_projects_lite/PN1LS_allORNs/simulations/minis/ornSpikeTimes.txt';
 system(fireTimeCmd);
 fireTimes=importdata('../../nC_projects_lite/PN1LS_allORNs/simulations/minis/ornSpikeTimes.txt');
 
@@ -73,11 +73,11 @@ pn2LS_Vm=importdata('../../nC_projects_lite/PN2LS_allORNs/simulations/minis/neur
 pn2LS_simTime=importdata('../../nC_projects_lite/PN2LS_allORNs/simulations/minis/time.dat');
 
 %collect ORN skel IDs from PN1LS hoc file and save them in a txt file
-idCommand='/usr/local/bin/grep -Po ''(?<=^synapse_)\d*'' ../../nC_projects_lite/PN2LS_allORNs/simulations/minis/PN2LS_allORNs.hoc > ../../nC_projects_lite/PN2LS_allORNs/simulations/minis/ornIDs.txt ';
+idCommand='grep -Po ''(?<=^synapse_)\d*'' ../../nC_projects_lite/PN2LS_allORNs/simulations/minis/PN2LS_allORNs.hoc > ../../nC_projects_lite/PN2LS_allORNs/simulations/minis/ornIDs.txt ';
 system(idCommand);
 synIDs=importdata('../../nC_projects_lite/PN2LS_allORNs/simulations/minis/ornIDs.txt');
 
-fireTimeCmd='/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ../../nC_projects_lite/PN2LS_allORNs/simulations/minis/PN2LS_allORNs.hoc > ../../nC_projects_lite/PN2LS_allORNs/simulations/minis/ornSpikeTimes.txt';
+fireTimeCmd='grep -Po ''((?<=.start = )\d*)'' ../../nC_projects_lite/PN2LS_allORNs/simulations/minis/PN2LS_allORNs.hoc > ../../nC_projects_lite/PN2LS_allORNs/simulations/minis/ornSpikeTimes.txt';
 system(fireTimeCmd);
 fireTimes=importdata('../../nC_projects_lite/PN2LS_allORNs/simulations/minis/ornSpikeTimes.txt');
 
@@ -111,11 +111,11 @@ pn3LS_Vm=importdata('../../nC_projects_lite/PN3LS_allORNs/simulations/minis/neur
 pn3LS_simTime=importdata('../../nC_projects_lite/PN3LS_allORNs/simulations/minis/time.dat');
 
 %collect ORN skel IDs from PN1LS hoc file and save them in a txt file
-idCommand='/usr/local/bin/grep -Po ''(?<=^synapse_)\d*'' ../../nC_projects_lite/PN3LS_allORNs/simulations/minis/PN3LS_allORNs.hoc > ../../nC_projects_lite/PN3LS_allORNs/simulations/minis/ornIDs.txt ';
+idCommand='grep -Po ''(?<=^synapse_)\d*'' ../../nC_projects_lite/PN3LS_allORNs/simulations/minis/PN3LS_allORNs.hoc > ../../nC_projects_lite/PN3LS_allORNs/simulations/minis/ornIDs.txt ';
 system(idCommand);
 synIDs=importdata('../../nC_projects_lite/PN3LS_allORNs/simulations/minis/ornIDs.txt');
 
-fireTimeCmd='/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ../../nC_projects_lite/PN3LS_allORNs/simulations/minis/PN3LS_allORNs.hoc > ../../nC_projects_lite/PN3LS_allORNs/simulations/minis/ornSpikeTimes.txt';
+fireTimeCmd='grep -Po ''((?<=.start = )\d*)'' ../../nC_projects_lite/PN3LS_allORNs/simulations/minis/PN3LS_allORNs.hoc > ../../nC_projects_lite/PN3LS_allORNs/simulations/minis/ornSpikeTimes.txt';
 system(fireTimeCmd);
 fireTimes=importdata('../../nC_projects_lite/PN3LS_allORNs/simulations/minis/ornSpikeTimes.txt');
 
@@ -149,11 +149,11 @@ pn1RS_Vm=importdata('../../nC_projects_lite/PN1RS_allORNs/simulations/minis/neur
 pn1RS_simTime=importdata('../../nC_projects_lite/PN1RS_allORNs/simulations/minis/time.dat');
 
 %collect ORN skel IDs from PN1LS hoc file and save them in a txt file
-idCommand='/usr/local/bin/grep -Po ''(?<=^synapse_)\d*'' ../../nC_projects_lite/PN1RS_allORNs/simulations/minis/PN1RS_allORNs.hoc > ../../nC_projects_lite/PN1RS_allORNs/simulations/minis/ornIDs.txt ';
+idCommand='grep -Po ''(?<=^synapse_)\d*'' ../../nC_projects_lite/PN1RS_allORNs/simulations/minis/PN1RS_allORNs.hoc > ../../nC_projects_lite/PN1RS_allORNs/simulations/minis/ornIDs.txt ';
 system(idCommand);
 synIDs=importdata('../../nC_projects_lite/PN1RS_allORNs/simulations/minis/ornIDs.txt');
 
-fireTimeCmd='/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ../../nC_projects_lite/PN1RS_allORNs/simulations/minis/PN1RS_allORNs.hoc > ../../nC_projects_lite/PN1RS_allORNs/simulations/minis/ornSpikeTimes.txt';
+fireTimeCmd='grep -Po ''((?<=.start = )\d*)'' ../../nC_projects_lite/PN1RS_allORNs/simulations/minis/PN1RS_allORNs.hoc > ../../nC_projects_lite/PN1RS_allORNs/simulations/minis/ornSpikeTimes.txt';
 system(fireTimeCmd);
 fireTimes=importdata('../../nC_projects_lite/PN1RS_allORNs/simulations/minis/ornSpikeTimes.txt');
 
@@ -186,13 +186,13 @@ pn2RS_Vm=importdata('../../nC_projects_lite/PN2RS_allORNs/simulations/minis/neur
 pn2RS_simTime=importdata('../../nC_projects_lite/PN2RS_allORNs/simulations/minis/time.dat');
 
 %collect ORN skel IDs from PN3LS hoc file and save them in a txt file
-idCommand=['/usr/local/bin/grep -Po ''(?<=^synapse_)\d*'' ', ...
+idCommand=['grep -Po ''(?<=^synapse_)\d*'' ', ...
     '../../nC_projects_lite/PN2RS_allORNs/simulations/minis/PN2RS_allORNs.hoc > ../../nC_projects_lite/PN2RS_allORNs/simulations/minis/ornIDs.txt'];
     
 system(idCommand);
 synIDs=importdata('../../nC_projects_lite/PN2RS_allORNs/simulations/minis/ornIDs.txt');
 
-fireTimeCmd=['/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ', ...
+fireTimeCmd=['grep -Po ''((?<=.start = )\d*)'' ', ...
     '../../nC_projects_lite/PN2RS_allORNs/simulations/minis/PN2RS_allORNs.hoc > ../../nC_projects_lite/PN2RS_allORNs/simulations/minis/ornSpikeTimes.txt'];
 system(fireTimeCmd);
 fireTimes=importdata('../../nC_projects_lite/PN2RS_allORNs/simulations/minis/ornSpikeTimes.txt');

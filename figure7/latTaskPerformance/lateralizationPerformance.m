@@ -5,10 +5,10 @@
 load('vmMeans_eq.mat')
 load('vmMeans.mat')
 
-% The above .mat  are located in:
 
-% The above files were created by latTaskMeanVmCollectionOrchestra.m and
-% latTaskMeanVmCollectionOrchestra_eq.m
+% The above files were created by compiling results from running the
+% simulations specified by latTaskBlock_real.m and latTaskBlock_eq.m at
+% each spike count difference
 
 % vmMeans and vmMeans_eq are arrays containing each PNs mean membrane
 % potential for all trials across all conditions in the lateralization

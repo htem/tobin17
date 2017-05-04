@@ -21,17 +21,6 @@ ORNs=[ORNs_Left, ORNs_Right];
 % return all skeleton IDs of DM6 PNs
 PNs=sort(annotations.DM6_0x20_PN);
 
-% return all skel IDs with *LN* in fieldname
-Fn = fieldnames(annotations);
-selFn = Fn(~cellfun(@isempty,regexp(Fn,'LN')));
-
-LNs=[];
-for i = 1:numel(selFn)
-    LNs=[LNs, annotations.(selFn{i})];
-end
-
-LNs = unique(LNs);
-
 % Load the connector structure
 load('../../tracing/conns.mat')
 

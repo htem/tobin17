@@ -26,9 +26,11 @@ cd(path1)
 system('cp -a ../../generatedNEURON_detTaskEq/. ./')
 
 %copy vecEvent.mod to this Dir
+%CHANGE PATHS TO POINT TO LOCAL NEURON 
 system('cp /groups/htem/code/neuron/nrn/share/examples/nrniv/netcon/vecevent.mod ./')
 
 %Compile mod files in this Dir
+%CHANGE PATHS TO POINT TO LOCAL NEURON
 system('/groups/htem/code/neuron/nrn/bin/nrnivmodl')
 
 %run Orchestra version of hocEdsv2 on the hoc file

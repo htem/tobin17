@@ -13,13 +13,13 @@ PN_Names={'PN1LS','PN2LS', 'PN3LS', 'PN1RS', 'PN2RS'};
 PN=cell2mat(PN_Names(i)); 
 
 %Move to the PN1 LS project directory
-cd(['~/nC_projects/',PN,'_allORNs/'])
+cd(['../../nC_projects_lite/',PN,'_allORNs/'])
 
 %make a dir in simulations called detTask
 system('mkdir simulations/detTask')
 
  %path to the dir containing the hoc files to be run
-path1=['/home/wft2/nC_projects/',PN,'_allORNs/simulations/detTask/'];
+path1=['../../nC_projects_lite/',PN,'_allORNs/simulations/detTask/'];
 cd(path1)
  
 
@@ -27,9 +27,11 @@ cd(path1)
 system('cp -a ../../generatedNEURON/. ./')
 
 %copy vecEvent.mod to this Dir
+%%CHANGE PATH TO POINT TO LOCAL NEURON DIR
 system('cp /groups/htem/code/neuron/nrn/share/examples/nrniv/netcon/vecevent.mod ./')
 
 %Compile mod files in this Dir
+%%CHANGE PATH TO POINT TO LOCAL NEURON DIR
 system('/groups/htem/code/neuron/nrn/bin/nrnivmodl')
 
 %run Orchestra version of hocEdsv2 on the hoc file

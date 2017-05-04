@@ -6,11 +6,11 @@ function [] = detTaskBlock_eq_fixedSpike( jobNum, reps, dF, PN, spikeNum,resDirN
 %Make sure rng is not going to repeat itself 
 rng('shuffle');
 
-%Add my matlab dir to the path 
-addpath(genpath('/home/wft2/Matlab'));
+%Add my tobin17 dir to the path ADJUST PATH AS NEEDED
+addpath(genpath('../../../tobin17'));
 
 %path to the dir containing the hoc files to be run
-path1=['/home/wft2/nC_projects/',PN,'_allORNs/simulations/detTask_eq/'];
+path1=['../../nC_projects_lite/',PN,'_allORNs/simulations/detTask_eq/'];
 cd(path1)
 
 %I need a loop right here that will jobNumeat this ~35 times
@@ -44,7 +44,6 @@ activeSyns=[];
 activeSyns=pullContactNums(ipsiORNs,path1,hocCpName);
 
 %Here is where I distribute the ipsi ORN synapses equally among all ORNs
-%NEEDS TO BE TESTED
 
 %shuffle the rows of activesyns
 activeSyns=activeSyns(randperm(size(activeSyns,1),size(activeSyns,1)),:);
@@ -74,16 +73,18 @@ system(simRefCmd)
 chngSVDirCmd=['sed -i -e ''s#spikeVectors#',svDirName,'#'' ',hocCpName];
 system(chngSVDirCmd)
 
-%Set the name of the directory to which the results will be saved
-htemGroupBase=['/groups/htem/analysis/wfly1/nC_projects/',PN,'_allORNs/simulations/detTask_eq'];
-resultDir=[htemGroupBase,'/results_fixedSpike_',resDirName,'/eq_dF',num2str(dF),'_rep',num2str(i)];
+%CHANGE PATHS TO POINT TO YOUR RESULTS DIR
+
+%htemGroupBase=['/groups/htem/analysis/wfly1/nC_projects/',PN,'_allORNs/simulations/latTask_eq'];
+%resultDir=[htemGroupBase,'/results_fixedSpikeCount/eq_L',num2str(lCount),'_R',num2str(rCount),'_rep', num2str(i)];
+    
 mkdir(resultDir);
 chngResDir=['sed -i -e ''s#{ sprint(targetDir, "%s%s/", simsDir, simReference)}#targetDir="',resultDir,'/"#'' ',hocCpName];
 system(chngResDir)
 
 %path to the dir containing the spikeVectors that specify this models
 %activity
-path2=['/home/wft2/nC_projects/',PN,'_allORNs/',svDirName];
+path2=['../../nC_projects_lite/',PN,'_allORNs/',svDirName];
 
 %Clear the spike trains/times variables
 clear spikeTrain
@@ -122,6 +123,7 @@ saveSpikeVectors(totSynapseNums,activeSyns,spikeTimes,path2)
 
 
 %add a line to my script that will run this simulation
+% CHANGE PATH TO POINT TO LOCAL NEURON
 runCmd=['/groups/htem/code/neuron/nrn/x86_64/bin/nrniv ', hocCpName];
 system(runCmd);
 

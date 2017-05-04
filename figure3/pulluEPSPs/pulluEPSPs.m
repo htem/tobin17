@@ -35,13 +35,13 @@ pn1LS_Vm=importdata(strcat(baseDir, 'PN1LS_allORNs/simulations/unitaries/neuron_
 pn1LS_simTime=importdata(strcat(baseDir, 'PN1LS_allORNs/simulations/unitaries/time.dat'));
 
 %collect ORN skel IDs from PN1LS hoc file and save them in a txt file
-idCommand=['/usr/local/bin/grep -Po ''(?<=objref spikesource_)\d*'' ', ...
+idCommand=['grep -Po ''(?<=objref spikesource_)\d*'' ', ...
     baseDir,'PN1LS_allORNs/simulations/unitaries/PN1LS_allORNs.hoc > ',baseDir,'PN1LS_allORNs/simulations/unitaries/ornIDs.txt'];
     
 system(idCommand);
 ornSkelIDs=importdata([baseDir,'PN1LS_allORNs/simulations/unitaries/ornIDs.txt']);
 
-fireTimeCmd=['/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
+fireTimeCmd=['grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
     'PN1LS_allORNs/simulations/unitaries/PN1LS_allORNs.hoc > ',baseDir, 'PN1LS_allORNs/simulations/unitaries/ornSpikeTimes.txt'];
 system(fireTimeCmd);
 fireTimes=importdata([baseDir,'PN1LS_allORNs/simulations/unitaries/ornSpikeTimes.txt']);
@@ -83,13 +83,13 @@ pn2LS_Vm=importdata(strcat(baseDir, 'PN2LS_allORNs/simulations/unitaries/neuron_
 pn2LS_simTime=importdata(strcat(baseDir, 'PN2LS_allORNs/simulations/unitaries/time.dat'));
 
 %collect ORN skel IDs from PN1LS hoc file and save them in a txt file
-idCommand=['/usr/local/bin/grep -Po ''(?<=objref spikesource_)\d*'' ', ...
+idCommand=['grep -Po ''(?<=objref spikesource_)\d*'' ', ...
     baseDir,'PN2LS_allORNs/simulations/unitaries/PN2LS_allORNs.hoc > ',baseDir,'PN2LS_allORNs/simulations/unitaries/ornIDs.txt'];
     
 system(idCommand);
 ornSkelIDs=importdata([baseDir,'PN2LS_allORNs/simulations/unitaries/ornIDs.txt']);
 
-fireTimeCmd=['/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
+fireTimeCmd=['grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
     'PN2LS_allORNs/simulations/unitaries/PN2LS_allORNs.hoc > ',baseDir, 'PN2LS_allORNs/simulations/unitaries/ornSpikeTimes.txt'];
 system(fireTimeCmd);
 fireTimes=importdata([baseDir,'PN2LS_allORNs/simulations/unitaries/ornSpikeTimes.txt']);
@@ -136,13 +136,13 @@ pn3LS_Vm=importdata(strcat(baseDir, 'PN3LS_allORNs/simulations/unitaries/neuron_
 pn3LS_simTime=importdata(strcat(baseDir, 'PN3LS_allORNs/simulations/unitaries/time.dat'));
 
 %collect ORN skel IDs from PN3LS hoc file and save them in a txt file
-idCommand=['/usr/local/bin/grep -Po ''(?<=objref spikesource_)\d*'' ', ...
+idCommand=['grep -Po ''(?<=objref spikesource_)\d*'' ', ...
     baseDir,'PN3LS_allORNs/simulations/unitaries/PN3LS_allORNs.hoc > ',baseDir,'PN3LS_allORNs/simulations/unitaries/ornIDs.txt'];
     
 system(idCommand);
 ornSkelIDs=importdata([baseDir,'PN3LS_allORNs/simulations/unitaries/ornIDs.txt']);
 
-fireTimeCmd=['/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
+fireTimeCmd=['grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
     'PN3LS_allORNs/simulations/unitaries/PN3LS_allORNs.hoc > ',baseDir, 'PN3LS_allORNs/simulations/unitaries/ornSpikeTimes.txt'];
 system(fireTimeCmd);
 fireTimes=importdata([baseDir,'PN3LS_allORNs/simulations/unitaries/ornSpikeTimes.txt']);
@@ -187,13 +187,13 @@ pn1RS_Vm=importdata(strcat(baseDir, 'PN1RS_allORNs/simulations/unitaries/neuron_
 pn1RS_simTime=importdata(strcat(baseDir, 'PN1RS_allORNs/simulations/unitaries/time.dat'));
 
 %collect ORN skel IDs from PN3LS hoc file and save them in a txt file
-idCommand=['/usr/local/bin/grep -Po ''(?<=objref spikesource_)\d*'' ', ...
+idCommand=['grep -Po ''(?<=objref spikesource_)\d*'' ', ...
     baseDir,'PN1RS_allORNs/simulations/unitaries/PN1RS_allORNs.hoc > ',baseDir,'PN1RS_allORNs/simulations/unitaries/ornIDs.txt'];
     
 system(idCommand);
 ornSkelIDs=importdata([baseDir,'PN1RS_allORNs/simulations/unitaries/ornIDs.txt']);
 
-fireTimeCmd=['/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
+fireTimeCmd=['grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
     'PN1RS_allORNs/simulations/unitaries/PN1RS_allORNs.hoc > ',baseDir, 'PN1RS_allORNs/simulations/unitaries/ornSpikeTimes.txt'];
 system(fireTimeCmd);
 fireTimes=importdata([baseDir,'PN1RS_allORNs/simulations/unitaries/ornSpikeTimes.txt']);
@@ -235,13 +235,13 @@ pn2RS_Vm=importdata(strcat(baseDir, 'PN2RS_allORNs/simulations/unitaries/neuron_
 pn2RS_simTime=importdata(strcat(baseDir, 'PN2RS_allORNs/simulations/unitaries/time.dat'));
 
 %collect ORN skel IDs from PN3LS hoc file and save them in a txt file
-idCommand=['/usr/local/bin/grep -Po ''(?<=objref spikesource_)\d*'' ', ...
+idCommand=['grep -Po ''(?<=objref spikesource_)\d*'' ', ...
     baseDir,'PN2RS_allORNs/simulations/unitaries/PN2RS_allORNs.hoc > ',baseDir,'PN2RS_allORNs/simulations/unitaries/ornIDs.txt'];
     
 system(idCommand);
 ornSkelIDs=importdata([baseDir,'PN2RS_allORNs/simulations/unitaries/ornIDs.txt']);
 
-fireTimeCmd=['/usr/local/bin/grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
+fireTimeCmd=['grep -Po ''((?<=.start = )\d*)'' ', baseDir,...
     'PN2RS_allORNs/simulations/unitaries/PN2RS_allORNs.hoc > ',baseDir, 'PN2RS_allORNs/simulations/unitaries/ornSpikeTimes.txt'];
 system(fireTimeCmd);
 fireTimes=importdata([baseDir,'PN2RS_allORNs/simulations/unitaries/ornSpikeTimes.txt']);
