@@ -1,7 +1,7 @@
 %{
 
-This is the script should prepare detTask_eq simulation dirs for all PNs.
-Run this before running the equalized detection task simulations
+This is the script should prepare detTask simulation dirs for all PNs.
+Run this before running the detection task simulations
 
 %}
 
@@ -15,21 +15,22 @@ PN=cell2mat(PN_Names(i));
 cd(['../../nC_projects_lite/',PN,'_allORNs/'])
 
 %make a dir in simulations called detTask
-system('mkdir simulations/detTask_eq')
+system('mkdir simulations/detTask')
 
  %path to the dir containing the hoc files to be run
-path1=['../../nC_projects_lite/',PN,'_allORNs/simulations/detTask_eq/'];
+path1=['../../nC_projects_lite/',PN,'_allORNs/simulations/detTask/'];
 cd(path1)
  
-
 % Copy the contents of the generatedNEURON dir to detTask
-system('cp -a ../../generatedNEURON_detTaskEq/. ./')
+system('cp -a ../../generatedNEURON/. ./')
 
 %copy vecEvent.mod to this Dir
-system('cp /groups/htem/code/neuron/nrn/share/examples/nrniv/netcon/vecevent.mod ./')
+%%CHANGE PATH TO POINT TO LOCAL NEURON DIR
+system('cp <path_to_NEURON>/neuron/nrn/share/examples/nrniv/netcon/vecevent.mod ./')
 
 %Compile mod files in this Dir
-system('/groups/htem/code/neuron/nrn/bin/nrnivmodl')
+%%CHANGE PATH TO POINT TO LOCAL NEURON DIR
+system('<path_to_NEURON>/neuron/nrn/bin/nrnivmodl')
 
 %run Orchestra version of hocEdsv2 on the hoc file
 hocEdCmd=['python ../../../hocEdsv2_Orchestra.py ',PN,'_allORNs.hoc ', PN,'_allORNs'];
@@ -37,13 +38,12 @@ system(hocEdCmd)
 
 %replace any remaining paths for the simulation computer with orchestra
 %path
-system(['sed -i -e ''s#\/home\/simulation\/#\/home\/wft2\/#'' ', PN,'_allORNs.hoc'])
+system(['sed -i -e ''s#\/home\/<simulation>\/#\/home\/<user>\/#'' ', PN,'_allORNs.hoc'])
 
 %Set initial Vm
 initVm=-60; %in mv
 runVCmd=['sed -i -e ''s#v\s\=\s\-65\.\0#v = \',num2str(initVm),'#'' ', PN,'_allORNs.hoc'];
 system(runVCmd)
-
 
 %Setsim duration
 runTime=400; %in ms
