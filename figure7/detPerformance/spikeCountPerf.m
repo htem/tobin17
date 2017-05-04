@@ -1,7 +1,39 @@
-%Code to analyze fixed spikecount det task results
+% This script should generate figure 7 panel b
+
+%{
+
+The commented out portion in the loop over PNs collects detection task
+simulation results produced by the functions figure7/detTaskBlock_eq_fixedSpike.m	
+and figure7/detTaskBlock_real_fixedSpike.m. It saves the mean on the PN
+voltage over the full trial for all trials and conditions into some .mat
+files. We have supplied these files for the simulations we ran to generate
+figure 7 figs in figure7/responseMeans
+
+%}
+
+
+load('responseMeans/real12Means')
+load('responseMeans/real13Means')
+load('responseMeans/real14Means')
+load('responseMeans/real15Means')
+load('responseMeans/real16Means')
+load('responseMeans/real17Means')
+load('responseMeans/real18Means')
+load('responseMeans/real19Means')
+load('responseMeans/real20Means')
+
+load('responseMeans/eq12Means')
+load('responseMeans/eq13Means')
+load('responseMeans/eq14Means')
+load('responseMeans/eq15Means')
+load('responseMeans/eq16Means')
+load('responseMeans/eq17Means')
+load('responseMeans/eq18Means')
+load('responseMeans/eq19Means')
+load('responseMeans/eq20Means')
+
 
 %Loop over each PN
-
 PN_Names={'PN1LS','PN2LS', 'PN3LS', 'PN1RS', 'PN2RS'};
 
 for p=1:5
@@ -568,26 +600,26 @@ for p=1:5
     
 end
 
-system('mkdir responseMeans')
-save('responseMeans/real12Means','real12Means')
-save('responseMeans/real13Means','real13Means')
-save('responseMeans/real14Means','real14Means')
-save('responseMeans/real15Means','real15Means')
-save('responseMeans/real16Means','real16Means')
-save('responseMeans/real17Means','real17Means')
-save('responseMeans/real18Means','real18Means')
-save('responseMeans/real19Means','real19Means')
-save('responseMeans/real20Means','real20Means')
-
-save('responseMeans/eq12Means','eq12Means')
-save('responseMeans/eq13Means','eq13Means')
-save('responseMeans/eq14Means','eq14Means')
-save('responseMeans/eq15Means','eq15Means')
-save('responseMeans/eq16Means','eq16Means')
-save('responseMeans/eq17Means','eq17Means')
-save('responseMeans/eq18Means','eq18Means')
-save('responseMeans/eq19Means','eq19Means')
-save('responseMeans/eq20Means','eq20Means')
+% system('mkdir responseMeans')
+% save('responseMeans/real12Means','real12Means')
+% save('responseMeans/real13Means','real13Means')
+% save('responseMeans/real14Means','real14Means')
+% save('responseMeans/real15Means','real15Means')
+% save('responseMeans/real16Means','real16Means')
+% save('responseMeans/real17Means','real17Means')
+% save('responseMeans/real18Means','real18Means')
+% save('responseMeans/real19Means','real19Means')
+% save('responseMeans/real20Means','real20Means')
+% 
+% save('responseMeans/eq12Means','eq12Means')
+% save('responseMeans/eq13Means','eq13Means')
+% save('responseMeans/eq14Means','eq14Means')
+% save('responseMeans/eq15Means','eq15Means')
+% save('responseMeans/eq16Means','eq16Means')
+% save('responseMeans/eq17Means','eq17Means')
+% save('responseMeans/eq18Means','eq18Means')
+% save('responseMeans/eq19Means','eq19Means')
+% save('responseMeans/eq20Means','eq20Means')
 
 
 
