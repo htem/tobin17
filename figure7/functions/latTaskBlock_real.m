@@ -1,6 +1,8 @@
+%This function assumes a file structure that is set up by the script
+%figure7/functions/latTask_ini.m
 
 %Accept as an arugment L and R ORN spike rates
-function [] = latTaskBlock_eq(jobNum, reps,dFL,dFR, lCount, rCount)
+function [] = latTaskBlock_real(jobNum, reps,dFL,dFR, lCount, rCount)
 
 %Make sure rng is not going to repeat itself
 rng('shuffle');
@@ -86,7 +88,7 @@ for i = jobNum*reps-reps+1:jobNum*reps
         
         % move to this PNs lat Task sim dir
         %path to the dir containing the hoc files to be run
-        path1=['/home/wft2/nC_projects/',PN,'_allORNs/simulations/latTask_eq/'];
+        path1=['/home/wft2/nC_projects/',PN,'_allORNs/simulations/latTask/'];
         cd(path1)
         
         %make a copy of the hoc file
@@ -104,49 +106,17 @@ for i = jobNum*reps-reps+1:jobNum*reps
         activeSynsL=[];
         activeSynsL=pullContactNums(ORNs_Left,path1,hocCpName);
         
-        
-        %shuffle the rows of activesyns
-        activeSynsL=activeSynsL(randperm(size(activeSynsL,1),size(activeSynsL,1)),:);
-        remain=[];
-        
-        for e=1:floor(size(activeSynsL,1)/numel(ORNs_Left))
-            
-            activeSynsL(e*numel(ORNs_Left)-numel(ORNs_Left)+1:e*numel(ORNs_Left),2)=[1:numel(ORNs_Left)];
-            remain(e*numel(ORNs_Left)-numel(ORNs_Left)+1:e*numel(ORNs_Left))=1;
-            
-        end
-        
-        activeSynsL(sum(remain)+1:end,2)=randsample(numel(ORNs_Left),size(activeSynsL,1)-sum(remain));
-        clear remain
-        
-        
         % Find synapse ids for all R ORN synapses
         activeSynsR=[];
         activeSynsR=pullContactNums(ORNs_Right,path1,hocCpName);
-        
-        
-        
-        %shuffle the rows of activesyns
-        activeSynsR=activeSynsR(randperm(size(activeSynsR,1),size(activeSynsR,1)),:);
-        remain=[];
-        
-        for e=1:floor(size(activeSynsR,1)/numel(ORNs_Right))
-            
-            activeSynsR(e*numel(ORNs_Right)-numel(ORNs_Right)+1:e*numel(ORNs_Right),2)=[1:numel(ORNs_Right)];
-            remain(e*numel(ORNs_Right)-numel(ORNs_Right)+1:e*numel(ORNs_Right))=1;
-            
-        end
-        
-        activeSynsR(sum(remain)+1:end,2)=randsample(numel(ORNs_Right),size(activeSynsR,1)-sum(remain));
-        clear remain 
         
         % make a spikeVector dir for this sim
         svDirName=['spikeVectors_',num2str(i)];
         mkSVDirCmd=['mkdir ../../',svDirName];
         system(mkSVDirCmd);
-
+        
         % Change the simReference = line in the hoc file and simsDir
-        simName='latTask_eq';
+        simName='latTask';
         simRefCmd=['sed -i -e ''s/simReference\s\=\s\".*\"/simReference \= \"',simName,'\"/'' ',hocCpName];
         system(simRefCmd)
         
@@ -155,9 +125,8 @@ for i = jobNum*reps-reps+1:jobNum*reps
         system(chngSVDirCmd)
         
         %Set the name of the directory to which the results will be saved
-        htemGroupBase=['/groups/htem/analysis/wfly1/nC_projects/',PN,'_allORNs/simulations/latTask_eq'];
-        resultDir=[htemGroupBase,'/results_fixedSpikeCount/eq_L',num2str(lCount),'_R',num2str(rCount),'_rep', num2str(i)];
-
+        htemGroupBase=['/groups/htem/analysis/wfly1/nC_projects/',PN,'_allORNs/simulations/latTask'];
+        resultDir=[htemGroupBase,'/results_fixedSpikeCount/real_L',num2str(lCount),'_R',num2str(rCount),'_rep', num2str(i)];
         mkdir(resultDir)
         chngResDir=['sed -i -e ''s#{ sprint(targetDir, "%s%s/", simsDir, simReference)}#targetDir="',resultDir,'/"#'' ',hocCpName];
         system(chngResDir)

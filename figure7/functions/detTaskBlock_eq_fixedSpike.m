@@ -1,3 +1,5 @@
+%This function assumes a file structure that is set up by the script
+%figure7/functions/detTask_eq_ini.m
 
 function [] = detTaskBlock_eq_fixedSpike( jobNum, reps, dF, PN, spikeNum,resDirName)
 
